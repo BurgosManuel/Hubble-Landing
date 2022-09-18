@@ -13,11 +13,6 @@ html {
 
 body {
   min-height: 100%;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
   background-color: var(--primary);
   background-image: url(../images/bg-desktop.svg);
   background-repeat: no-repeat;
@@ -26,9 +21,14 @@ body {
 
 /* - We change the background image on mobile */
 @media screen and (max-width: 375px) {
-  .container {
+  body {
     background-image: url(../images/bg-mobile.svg);
+    background-size: contain;
   }
+}
+.container {
+  width: 100%;
+  height: 100%;
 }
 
 /* === HEADER === */
@@ -40,17 +40,35 @@ header img {
   width: 130px;
 }
 
+@media screen and (min-width: 1440px) {
+  body {
+    overflow: hidden;
+    background-size: contain;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  header img {
+    width: 180px;
+  }
+}
+
 /* === MAIN CONTENT === */
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+}
+.content-image {
+  text-align: center;
 }
 
 .content-image img {
-  max-width: 100%;
+  max-width: 80%;
 }
 
 .content-body {
@@ -66,6 +84,7 @@ h2 {
 }
 
 p {
+  max-width: 600px;
   font-family: var(--font-body);
   font-size: 16px;
   font-weight: 400;
@@ -85,17 +104,28 @@ p {
 }
 
 /* === MAIN CONTENT RESPONSIVE === */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .content {
     flex-direction: row;
+    margin-top: 5vh;
+  }
+
+  .content-image {
+    width: 80%;
+  }
+
+  .content-image img {
+    width: 100%;
   }
 
   .content-body {
     text-align: left;
+    align-self: flex-start;
+    justify-self: left;
   }
 
-  p {
-    /* font-size: 24 */
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
@@ -103,8 +133,13 @@ p {
 .icons-container {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+p {
+  order: 2;
 }
 
 .icons-list {
@@ -113,6 +148,22 @@ p {
   align-items: center;
   justify-content: center;
   list-style: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .icons-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 2rem;
+  }
+
+  .icons-container p {
+    order: 0;
+  }
+
+  .icons-list {
+    margin-right: 3rem;
+  }
 }
 
 ul {
