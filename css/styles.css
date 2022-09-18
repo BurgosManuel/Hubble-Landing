@@ -60,7 +60,7 @@ header img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 1rem;
 }
 .content-image {
@@ -110,12 +110,9 @@ p {
     margin-top: 5vh;
   }
 
-  .content-image {
-    width: 80%;
-  }
-
   .content-image img {
     width: 100%;
+    max-width: 800px;
   }
 
   .content-body {
@@ -178,9 +175,8 @@ li {
   padding: 0.5rem;
   color: #fff;
   text-align: center;
-  margin-right: 5px;
+  margin-right: 1rem;
 }
-
 /* === FOOTER === */
 .attribution {
   color: #fff;
@@ -189,4 +185,24 @@ li {
 }
 .attribution a {
   color: var(--secondary);
+}
+
+
+/* === Active/Hover effects === */
+a:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.register-btn:hover, .register-btn:focus {
+  background-color: var(--secondary);
+}
+
+
+li:hover, a:focus li {
+  color: var(--secondary);
+  border-color: var(--secondary);
 }
