@@ -33,7 +33,7 @@ Users should be able to:
 
 ## Links
 
-- Live Site URL: [Github Pages](https://burgosmanuel.github.io/Hubble-Landing)
+- Live Site URL: [Hubble Live](https://hubble.burgosmanuel.ar)
 
 ## My process
 
